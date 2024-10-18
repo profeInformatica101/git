@@ -54,6 +54,22 @@ Este repositorio sirve como una guía rápida y un recordatorio de los comandos 
   git reset --hard <id_commit>
 
 ```
+## Historial de Commits
+  ```
+En detalle:
+```sh
+git log --pretty=format:"%h - %an, %ar : %s"
+```
+%h: Muestra el hash abreviado del commit. Este es un identificador corto para el commit, más fácil de leer y manejar que el hash completo.
+
+%an: Muestra el nombre del autor del commit. Este es el individuo que realizó los cambios y ejecutó el commit.
+
+## Ejemplo de ALIAS
+
+- **Crear un Alias para 'git tree'**
+  ```bash
+  git config --global alias.tree "log --graph --decorate --all --oneline"
+  ```
 ## Trabajar con Ramas
 
 - **Listar todas las Ramas**
@@ -89,26 +105,7 @@ Este repositorio sirve como una guía rápida y un recordatorio de los comandos 
 
  ```
 
-## Historial de Commits
 
-- **Ver el Historial de Commits**
-  ```bash
-  git log
-  ```
-En detalle:
-```sh
-git log --pretty=format:"%h - %an, %ar : %s"
-```
-%h: Muestra el hash abreviado del commit. Este es un identificador corto para el commit, más fácil de leer y manejar que el hash completo.
-
-%an: Muestra el nombre del autor del commit. Este es el individuo que realizó los cambios y ejecutó el commit.
-
-## Ejemplo de ALIAS
-
-- **Crear un Alias para 'git tree'**
-  ```bash
-  git config --global alias.tree "log --graph --decorate --all --oneline"
-  ```
 
 ## Configuración del Repositorio
 
