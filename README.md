@@ -38,7 +38,16 @@ Este repositorio sirve como una guía rápida y un recordatorio de los comandos 
 - **Realizar un Commit de los Cambios**
   ```bash
   git commit -m "Mensaje del commit"
+
+
   ```
+## Restaurar a un **Commit pasado**
+- **Ver el Historial de Commits**
+  ```bash
+  git log
+- ** RESTAURAR(Commits)  **
+- ```bash
+  git reset --hard 331a6a3
 
 ## Trabajar con Ramas
 
