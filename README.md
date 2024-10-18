@@ -41,19 +41,7 @@ Este repositorio sirve como una guía rápida y un recordatorio de los comandos 
 
 
   ```
-## Restaurar a un **Commit pasado**
-- **Ver el Historial de Commits**
-  ```bash
-  git log
-  
-  ```
-  **RESTAURAR(Commits)**
 
-```bash
-
-  git reset --hard <id_commit>
-
-```
 ## Historial de Commits
 En detalle:
 ```sh
@@ -70,6 +58,21 @@ git log --pretty=format:"%h - %an, %ar : %s"
   ```bash
   git config --global alias.tree "log --graph --decorate --all --oneline"
   ```
+
+## Restaurar a un **Commit pasado**
+- **Ver el Historial de Commits**
+  ```bash
+  git log
+  
+  ```
+  **RESTAURAR(Commits)**
+
+```bash
+
+  git reset --hard <id_commit>
+
+```
+  
 ## Trabajar con Ramas
 
 - **Listar todas las Ramas**
