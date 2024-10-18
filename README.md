@@ -45,10 +45,13 @@ Este repositorio sirve como una guía rápida y un recordatorio de los comandos 
 - **Ver el Historial de Commits**
   ```bash
   git log
-- ** RESTAURAR(Commits)  **
-- ```bash
+  
+  ```
+  **RESTAURAR(Commits)**
+-```bash
   git reset --hard 331a6a3
 
+  ```
 ## Trabajar con Ramas
 
 - **Listar todas las Ramas**
