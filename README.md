@@ -55,10 +55,10 @@ Este repositorio sirve como una guía rápida y un recordatorio de los comandos 
 
 ```
 ## Historial de Commits
-  ```
 En detalle:
 ```sh
 git log --pretty=format:"%h - %an, %ar : %s"
+
 ```
 %h: Muestra el hash abreviado del commit. Este es un identificador corto para el commit, más fácil de leer y manejar que el hash completo.
 
@@ -104,8 +104,6 @@ git log --pretty=format:"%h - %an, %ar : %s"
  git pull [alias] [rama]
 
  ```
-
-
 
 ## Configuración del Repositorio
 
