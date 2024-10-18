@@ -106,15 +106,14 @@ git log --pretty=format:"%h - %an, %ar : %s"
   ```bash
  git pull [alias] [rama]
 
- ```
+```
 
 ## Configuración del Repositorio
 
 - **Cambiar URL del Repositorio Remoto**
-  ```bash
+```bash
   git remote set-url origin git@github.com:[tu_usuario]/[tu_repositorio].git
-  ```
-
+```
 - **Añadir un Nuevo Repositorio Remoto**
   ```bash
   git remote add origin git@github.com:[tu_usuario]/[tu_repositorio].git
