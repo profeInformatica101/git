@@ -48,7 +48,8 @@ Este repositorio sirve como una guía rápida y un recordatorio de los comandos 
   
   ```
   **RESTAURAR(Commits)**
--```bash
+
+```bash
 
   git reset --hard <id_commit>
 
