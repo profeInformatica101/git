@@ -68,16 +68,24 @@ git log --pretty=format:"%h - %an, %ar : %s"
   **RESTAURAR(Commits)**
 
 ```bash
-
   git reset --hard <id_commit>
 
+```
 Si no conoces el hash del commit inicial, puedes encontrarlo usando:
 
+```bash
  git log --reverse
 
 
 ```
-  
+
+Realiza un git pull para traer los cambios del repositorio remoto:
+
+```bash
+git pull origin main --rebase
+
+
+```
 ## Trabajar con Ramas
 
 - **Listar todas las Ramas**
