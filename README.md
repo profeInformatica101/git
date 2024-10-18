@@ -49,9 +49,10 @@ Este repositorio sirve como una guía rápida y un recordatorio de los comandos 
   ```
   **RESTAURAR(Commits)**
 -```bash
-  git reset --hard 331a6a3
 
-  ```
+  git reset --hard <id_commit>
+
+```
 ## Trabajar con Ramas
 
 - **Listar todas las Ramas**
@@ -83,8 +84,9 @@ Este repositorio sirve como una guía rápida y un recordatorio de los comandos 
 
 - **Actualizar el Repositorio Local con Cambios Remotos**
   ```bash
-  git pull [alias] [rama]
-  ```
+ git pull [alias] [rama]
+
+ ```
 
 ## Historial de Commits
 
