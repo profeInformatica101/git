@@ -69,6 +69,8 @@ git log --pretty=format:"%h - %an, %ar : %s"
 
 ```bash
   git reset --hard <id_commit>
+  git push --force
+
 
 ```
 Si no conoces el hash del commit inicial, puedes encontrarlo usando:
