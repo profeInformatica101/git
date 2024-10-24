@@ -118,7 +118,7 @@ git pull origin main --rebase
   ```
 
 - **Actualizar el Repositorio Local con Cambios Remotos**
-  ```bash
+```bash
  git pull [alias] [rama]
 
 ```
