@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación de Markdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        code {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        blockquote {
+            border-left: 4px solid #ddd;
+            margin-left: 0;
+            padding-left: 10px;
+            color: #555;
+            font-style: italic;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Explicación de Markdown</h1>
+
+    <h2>1. Encabezados</h2>
+    <p>Se utilizan <code>#</code>, <code>##</code>, etc., para crear títulos de diferentes niveles. Por ejemplo:</p>
+    <pre><code># Encabezado de nivel 1
+## Encabezado de nivel 2
+### Encabezado de nivel 3</code></pre>
+
+    <h2>2. Negrita y cursiva</h2>
+    <p>Para aplicar negrita, usa <code>**texto**</code> y para cursiva, usa <code>*texto*</code>. Para ambos estilos a la vez, usa <code>***texto***</code>. Ejemplo:</p>
+    <pre><code>**Este es un texto en negrita**
+*Este es un texto en cursiva*
+***Este es un texto en negrita y cursiva***</code></pre>
+
+    <h2>3. Listas</h2>
+    <p>Las listas no ordenadas se crean con <code>-</code> y las ordenadas con <code>1.</code>, <code>2.</code>, etc. Ejemplo de lista no ordenada:</p>
+    <pre><code>- Elemento 1
+- Elemento 2
+- Elemento 3</code></pre>
+    <p>Ejemplo de lista ordenada:</p>
+    <pre><code>1. Primer paso
+2. Segundo paso
+3. Tercer paso</code></pre>
+
+    <h2>4. Enlaces e imágenes</h2>
+    <p>Para insertar enlaces, utiliza la sintaxis <code>[texto](URL)</code>. Para imágenes, la sintaxis es <code>![texto alternativo](URL)</code>. Ejemplo de un enlace:</p>
+    <pre><code>[Visita GitHub](https://github.com)</code></pre>
+    <p>Ejemplo de una imagen:</p>
+    <pre><code>![Descripción de la imagen](https://ruta-de-la-imagen.com/imagen.jpg)</code></pre>
+
+    <h2>5. Bloques de código</h2>
+    <p>Los bloques de código se indican con tres acentos graves (<code>```</code>) y se puede especificar el lenguaje para resaltar la sintaxis. Ejemplo de bloque de código en PHP:</p>
+    <pre><code>```php
+<?php
+echo "Hola, mundo";
+?>
+```</code></pre>
+
+    <h2>6. Citas</h2>
+    <p>Las citas se crean utilizando el símbolo <code>&gt;</code>. Ejemplo:</p>
+    <pre><code>> "La vida es lo que pasa mientras estás ocupado haciendo otros planes." – John Lennon</code></pre>
+    <blockquote>"La vida es lo que pasa mientras estás ocupado haciendo otros planes." – John Lennon</blockquote>
+
+    <h2>7. Tablas</h2>
+    <p>Se usan <code>|</code> para crear tablas con columnas y filas. Ejemplo:</p>
+    <pre><code>| Hobbies       | Horas por semana |
+| ------------- | ---------------- |
+| Leer          | 5 horas          |
+| Programar     | 10 horas         |
+| Deporte       | 3 horas          |</code></pre>
+
+    <table>
+        <tr>
+            <th>Hobbies</th>
+            <th>Horas por semana</th>
+        </tr>
+        <tr>
+            <td>Leer</td>
+            <td>5 horas</td>
+        </tr>
+        <tr>
+            <td>Programar</td>
+            <td>10 horas</td>
+        </tr>
+        <tr>
+            <td>Deporte</td>
+            <td>3 horas</td>
+        </tr>
+    </table>
+
+    <h2>8. Tareas</h2>
+    <p>Las listas de tareas utilizan <code>- [ ]</code> para tareas pendientes y <code>- [x]</code> para tareas completadas. Ejemplo:</p>
+    <pre><code>- [ ] Estudiar para el examen
+- [ ] Completar el ejercicio de Markdown
+- [x] Entregar la tarea en GitHub</code></pre>
+
+    <ul>
+        <li><input type="checkbox"> Estudiar para el examen</li>
+        <li><input type="checkbox"> Completar el ejercicio de Markdown</li>
+        <li><input type="checkbox" checked> Entregar la tarea en GitHub</li>
+    </ul>
+
+</body>
