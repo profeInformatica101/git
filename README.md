@@ -1,33 +1,53 @@
-# Comandos de Git Esenciales
+
+# 📘 Comandos de Git Esenciales
 
 Este repositorio sirve como una guía rápida y un recordatorio de los comandos más importantes de Git que se utilizan regularmente en el desarrollo de software y el control de versiones.
 
-## Configuración Inicial
+---
 
-- **Configurar Usuario y Correo Electrónico**
-  ```bash
-  git config --global user.name "Tu Nombre"
-  git config --global user.email "tuemail@example.com"
-  ```
+## 🛠️ Configuración Inicial
 
-## Crear y Clonar Repositorios
+1. **Configurar Usuario y Correo Electrónico**
+   ```bash
+   git config --global user.name "Tu Nombre"
+   git config --global user.email "tuemail@example.com"
+   ```
+
+2. **Ver la Configuración Actual**
+   ```bash
+   git config --list
+   ```
+
+---
+
+## 📂 Gestión de Repositorios
+
+### 1. Crear un Repositorio
 
 - **Inicializar un Nuevo Repositorio**
   ```bash
   git init
   ```
 
-- **Clonar un Repositorio Existente**
+### 2. Clonar un Repositorio Existente
+
+- **Clonar un Repositorio**
   ```bash
   git clone [URL]
   ```
 
-## Cambios en los Archivos
+---
+
+## ✏️ Gestión de Cambios
+
+### 1. Ver el Estado
 
 - **Verificar el Estado del Repositorio**
   ```bash
   git status
   ```
+
+### 2. Preparar Archivos para un Commit
 
 - **Agregar Archivos al Área de Staging**
   ```bash
@@ -35,62 +55,64 @@ Este repositorio sirve como una guía rápida y un recordatorio de los comandos 
   git add .
   ```
 
-- **Realizar un Commit de los Cambios**
+- **Eliminar un Archivo del Área de Staging**
+  ```bash
+  git reset [archivo]
+  ```
+
+### 3. Registrar Cambios
+
+- **Realizar un Commit**
   ```bash
   git commit -m "Mensaje del commit"
-
-
   ```
 
-## Historial de Commits
-En detalle:
-```sh
-git log --pretty=format:"%h - %an, %ar : %s"
-
-```
-%h: Muestra el hash abreviado del commit. Este es un identificador corto para el commit, más fácil de leer y manejar que el hash completo.
-
-%an: Muestra el nombre del autor del commit. Este es el individuo que realizó los cambios y ejecutó el commit.
-
-## Ejemplo de ALIAS
-
-- **Crear un Alias para 'git tree'**
+- **Modificar el Último Commit (sin cambiar el mensaje)**
   ```bash
-  git config --global alias.tree "log --graph --decorate --all --oneline"
+  git commit --amend --no-edit
   ```
 
-## Restaurar a un **Commit pasado**
-- **Ver el Historial de Commits**
+- **Modificar el Último Commit (cambiando el mensaje)**
   ```bash
-  git log
-  
+  git commit --amend -m "Nuevo mensaje del commit"
   ```
-  **RESTAURAR(Commits)**
 
-```bash
+---
+
+## 🕒 Historial y Restauración
+
+### 1. Ver el Historial
+
+- **Ver Historial de Commits**
+  ```bash
+  git log --pretty=format:"%h - %an, %ar : %s"
+  ```
+
+### 2. Restaurar Cambios
+
+- **Restaurar a un Commit Pasado**
+  ```bash
   git reset --hard <id_commit>
   git push --force
+  ```
 
+- **Listar Commits en Orden Inverso**
+  ```bash
+  git log --reverse
+  ```
 
-```
-Si no conoces el hash del commit inicial, puedes encontrarlo usando:
+- **Actualizar con Rebase para un Historial Lineal**
+  ```bash
+  git pull origin main --rebase
+  ```
 
-```bash
- git log --reverse
+---
 
+## 🌱 Trabajo con Ramas
 
-```
+### 1. Gestión de Ramas
 
-Realiza un git pull para traer los cambios del repositorio remoto:
-
-```bash
-git pull origin main --rebase
-
-
-```
-## Trabajar con Ramas
-
-- **Listar todas las Ramas**
+- **Listar Ramas**
   ```bash
   git branch -a
   ```
@@ -100,79 +122,126 @@ git pull origin main --rebase
   git branch [nombre-rama]
   ```
 
-- **Cambiar a Otra Rama**
+- **Cambiar de Rama**
   ```bash
   git checkout [nombre-rama]
   ```
 
-- **Fusionar Ramas**
+### 2. Fusionar Ramas
+
+- **Fusionar Cambios**
   ```bash
   git merge [nombre-rama]
   ```
 
-## Sincronización con Repositorios Remotos
+- **Resolver Conflictos de Fusión**
+  ```bash
+  git mergetool
+  ```
 
-- **Subir Cambios al Repositorio Remoto**
+---
+
+## 🌐 Repositorios Remotos
+
+### 1. Sincronización
+
+- **Subir Cambios**
   ```bash
   git push [alias] [rama]
   ```
 
-- **Actualizar el Repositorio Local con Cambios Remotos**
-```bash
- git pull [alias] [rama]
+- **Subir Cambios Forzados (con Precaución)**
+  ```bash
+  git push origin [rama] --force
+  ```
 
-```
+- **Actualizar desde el Repositorio Remoto**
+  ```bash
+  git pull [alias] [rama]
+  ```
 
-## Configuración del Repositorio
+- **Traer Cambios sin Integrar Automáticamente**
+  ```bash
+  git fetch [alias]
+  ```
 
-- **Cambiar URL del Repositorio Remoto**
-```bash
+### 2. Configuración de Repositorio Remoto
+
+- **Cambiar la URL**
+  ```bash
   git remote set-url origin git@github.com:[tu_usuario]/[tu_repositorio].git
-```
-- **Añadir un Nuevo Repositorio Remoto**
+  ```
+
+- **Añadir un Nuevo Repositorio**
   ```bash
   git remote add origin git@github.com:[tu_usuario]/[tu_repositorio].git
   ```
 
-## Generar Clave Pública y Privada SSH
+---
 
-Para generar una nueva clave SSH, puedes usar el siguiente comando. Asegúrate de reemplazar "tu_email@example.com" con tu dirección de correo electrónico real. Este comando crea una nueva clave SSH, usando el correo electrónico proporcionado como una etiqueta.
+## 🔒 Claves SSH
 
- ```bash
-  ssh-keygen -t rsa -b 4096 -C "tu_email@example.com"
-```
+1. **Generar una Nueva Clave**
+   ```bash
+   ssh-keygen -t rsa -b 4096 -C "tu_email@example.com"
+   ```
 
-Después de ejecutar el comando, te pedirá que especifiques la ubicación del archivo en el que quieres guardar la clave. Puedes presionar enter para aceptar la ubicación predeterminada. Luego, te pedirá una contraseña segura para la clave.
+2. **Agregar Clave al ssh-agent**
+   ```bash
+   eval "$(ssh-agent -s)"
+   ssh-add ~/.ssh/tu_clave_privada
+   ```
 
-### Agrega tu clave SSH al ssh-agent:
+---
 
-    - Asegúrate de que el ssh-agent esté en ejecución ejecutando 
-     
- ```bash 
-      eval "$(ssh-agent -s)".
-```
-   - Añade tu clave SSH privada al ssh-agent con ssh-add ~/.ssh/tu_clave_privada, sustituyendo tu_clave_privada por el nombre de tu archivo de clave privada (por ejemplo, id_ed25519).
+## 🛠️ Utilidades Adicionales
 
-## Comandos Adicionales
+1. **Comprobar Conexión Remota**
+   ```bash
+   ssh -T git@github.com
+   ```
 
-- **Comprobar Conexión con Repositorio Remoto**
-  ```bash
-  ssh -T git@github.com
-  ```
+2. **Comparar Cambios**
+   ```bash
+   git diff [branch1]..[branch2]
+   ```
 
-- **Diferencias entre Archivos**
-  ```bash
-  git diff
-  ```
+3. **Reestablecer Archivos**
+   ```bash
+   git reset [archivo]
+   ```
 
-- **Comparar Diferencias entre Distintos Repositorios**
-  Para comparar diferencias entre distintos repositorios, puedes utilizar el comando `git diff [branch1]..[branch2]`. Esto te permitirá ver las diferencias entre dos ramas, incluso si están en repositorios distintos, siempre que ambos estén correctamente referenciados localmente.
+4. **Alias Útil**
+   - **Crear un Alias para 'git tree'**
+     ```bash
+     git config --global alias.tree "log --graph --decorate --all --oneline"
+     ```
 
-  ```bash
-  git diff [branch1]..[branch2]
-  ```
+---
 
-- **Reestablecer Archivos del Área de Staging**
-  ```bash
-  git reset [archivo]
-  ```
+## 💡 Comandos Avanzados y Prácticas Recomendadas
+
+1. **Eliminar Ramas Locales**
+   ```bash
+   git branch -d [nombre-rama]
+   ```
+
+2. **Eliminar Ramas Remotas**
+   ```bash
+   git push origin --delete [nombre-rama]
+   ```
+
+3. **Ver Cambios entre Commits**
+   ```bash
+   git diff [id_commit1] [id_commit2]
+   ```
+
+4. **Stash de Cambios Temporales**
+   ```bash
+   git stash
+   git stash pop
+   ```
+
+5. **Mostrar Ramas que Contienen un Commit Específico**
+   ```bash
+   git branch --contains [id_commit]
