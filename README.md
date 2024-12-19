@@ -18,6 +18,11 @@ Este repositorio sirve como una guía rápida y un recordatorio de los comandos 
    git config --list
    ```
 
+3. **Instalar Oh My Zsh (opcional, para mejorar tu experiencia en la terminal)**
+   ```bash
+   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+   ```
+
 ---
 
 ## 📂 Gestión de Repositorios
