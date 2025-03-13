@@ -1,4 +1,6 @@
+# 📘 Chuleta para crear README: https://profeinformatica101.github.io/git/Markdown
 
+---
 # 📘 Comandos de Git Esenciales
 
 Este repositorio sirve como una guía rápida y un recordatorio de los comandos más importantes de Git que se utilizan regularmente en el desarrollo de software y el control de versiones.
