@@ -250,3 +250,54 @@ Este repositorio sirve como una guía rápida y un recordatorio de los comandos 
 5. **Mostrar Ramas que Contienen un Commit Específico**
    ```bash
    git branch --contains [id_commit]
+   ```
+
+---
+
+## 💡 Verifica tus remotos actuales
+
+```bash
+   git remote -v
+```
+
+# Ejemplo de traerse una rama de un repositorio que se ha realizado anteriormente Fork
+# (Proyecto sin pruebas)
+
+## Agrega el repositorio original como remoto `upstream`
+
+```bash
+   git remote add upstream https://github.com/profeInformatica101/tienda.git
+```
+
+## Trae las ramas del repositorio original (`upstream`)
+
+```bash
+   git fetch upstream
+```
+
+## Crea tu propia rama basada en `feature/sin-pruebas`
+
+```bash
+   git checkout -b mi-feature upstream/feature/sin-pruebas
+```
+
+## Sube los cambios a tu repositorio
+
+```bash
+   git push origin mi-feature
+```
+
+## Gestiona los cambios en tu repositorio
+
+```bash
+   git add .
+   git commit -m "Descripción de los cambios"
+   git push origin mi-feature
+```
+
+## Actualizar tu rama con los cambios de `upstream`
+
+```bash
+   git fetch upstream
+   git merge upstream/feature/sin-pruebas
+```
