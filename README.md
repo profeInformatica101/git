@@ -1,12 +1,23 @@
-# 📘 Chuleta para crear README: https://profeinformatica101.github.io/git/Markdown
+
+# 🧠 Git Cheat Sheet + Chuleta Markdown
+
+📘 **Chuleta Markdown para tu README:**  
+https://profeinformatica101.github.io/git/Markdown
 
 ---
-# 📘 Comandos de Git Esenciales
 
-Este repositorio sirve como una guía rápida y un recordatorio de los comandos más importantes de Git que se utilizan regularmente en el desarrollo de software y el control de versiones.
+# 🚀 ¿`git fetch` o `git pull`? ¡No te confundas!
+
+| Comando      | ¿Qué hace?                                           | ¿Afecta tu código local? |
+|--------------|------------------------------------------------------|---------------------------|
+| 🟢 `git fetch` | 🔎 Solo descarga los cambios remotos (sin mezclar)   | ❌ No                     |
+| 🟠 `git pull`  | 🔄 Descarga y fusiona automáticamente los cambios    | ✅ Sí                     |
 
 ---
 
+# 🧰 Comandos de Git Esenciales
+
+Este repositorio sirve como guía rápida de los comandos más útiles de Git para el desarrollo y control de versiones.
 ## 🛠️ Configuración Inicial
 
 1. **Configurar Usuario y Correo Electrónico**
