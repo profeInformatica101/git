@@ -274,7 +274,6 @@ Este repositorio sirve como guía rápida de los comandos más útiles de Git pa
 ```
 
 # Ejemplo de traerse una rama de un repositorio que se ha realizado anteriormente Fork
-# (Proyecto sin pruebas)
 
 ## Agrega el repositorio original como remoto `upstream`
 
