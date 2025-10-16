@@ -217,7 +217,7 @@ Este repositorio sirve como guía rápida de los comandos más útiles de Git pa
 ## 1. Añade el repositorio externo como remoto
 
 ```bash
-git remote add jdominguez https://github.com/jdominguez10/miapp.git
+git remote add <usuarioGitHub> https://github.com/<usuarioGitHub>/miapp.git
 ```
 
 ---
@@ -225,15 +225,15 @@ git remote add jdominguez https://github.com/jdominguez10/miapp.git
 ## 2. Trae sus referencias (ramas y etiquetas)
 
 ```bash
-git fetch jdominguez
+git fetch  <usuarioGitHub>
 ```
 
 ---
 
 ## 3. Crea tu rama local basada en la rama remota
 
-```bash
-git checkout -b curl_SwingMavenBase jdominguez/curl_SwingMavenBase
+```bash 
+git checkout -b curl_SwingMavenBase  <usuarioGitHub>/curl_SwingMavenBase
 ```
 
 ---
@@ -260,7 +260,7 @@ git push origin main
 ## 6. *(Opcional)* Limpieza del remoto temporal
 
 ```bash
-git remote remove jdominguez
+git remote remove  <usuarioGitHub>
 ```
 
 ---
