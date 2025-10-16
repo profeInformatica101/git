@@ -9,6 +9,7 @@ https://profeinformatica101.github.io/git/Markdown
 
 > “Git no es una nube ni una aplicación externa.  
 > **Git eres tú, tu código y una carpeta llamada `.git`.**”  
+> - Anónimo (inspirado en Linus Torvalds)
 
 Cuando ejecutas `git init`, Git no crea magia: simplemente genera una carpeta oculta llamada **`.git/`**, que **es el repositorio en sí mismo**.  
 Todo lo que hace Git (commits, ramas, merges, reverts) sucede ahí dentro.
