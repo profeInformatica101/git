@@ -12,7 +12,67 @@ https://profeinformatica101.github.io/git/Markdown
 |--------------|------------------------------------------------------|---------------------------|
 | 🟢 `git fetch` | 🔎 Solo descarga los cambios remotos (sin mezclar)   | ❌ No                     |
 | 🟠 `git pull`  | 🔄 Descarga y fusiona automáticamente los cambios    | ✅ Sí                     |
+# 🔀 Importar una rama desde otro repositorio (no fork) y subirla al tuyo
 
+**Objetivo:** Traer la rama `curl_SwingMavenBase` del repo de otra cuenta y publicarla en tu repo.
+
+---
+
+## 1. Añade el repositorio externo como remoto
+
+```bash
+git remote add jdominguez https://github.com/jdominguez10/miapp.git
+```
+
+---
+
+## 2. Trae sus referencias (ramas y etiquetas)
+
+```bash
+git fetch jdominguez
+```
+
+---
+
+## 3. Crea tu rama local basada en la rama remota
+
+```bash
+git checkout -b curl_SwingMavenBase jdominguez/curl_SwingMavenBase
+```
+
+---
+
+## 4. Publica esa rama en *tu* repositorio
+
+```bash
+git push origin curl_SwingMavenBase
+```
+
+---
+
+## 5. *(Opcional)* Integra esa rama en `main` de tu repo
+
+```bash
+git checkout main
+git pull origin main
+git merge --no-ff curl_SwingMavenBase
+git push origin main
+```
+
+---
+
+## 6. *(Opcional)* Limpieza del remoto temporal
+
+```bash
+git remote remove jdominguez
+```
+
+---
+
+### 💡 Notas
+- `git fetch` **no** modifica tu trabajo, solo descarga referencias.
+- Usa `--no-ff` para conservar un commit de merge explícito (historial más claro).
+- Si aparecen conflictos al fusionar, resuélvelos, `git add .`, y luego `git commit`.
 ---
 
 # 🧰 Comandos de Git Esenciales
