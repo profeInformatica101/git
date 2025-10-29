@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Configuración Git – Guía Profesional</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons (iconos profesionales) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    /* Tipografía y colores sutiles */
+    body { background: #f6f8fb; }
+    .hero {
+      background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+      color: #fff;
+      border-radius: 1rem;
+      padding: 2.5rem;
+    }
+    .code {
+      background: #0b1020;
+      color: #e9f0ff;
+      padding: .75rem 1rem;
+      border-radius: .5rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Courier New", monospace;
+      position: relative;
+      overflow: auto;
+    }
+    .code .copy-btn {
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+      border: 0;
+      background: rgba(255,255,255,.12);
+      color: #fff;
+      padding: .25rem .5rem;
+      border-radius: .375rem;
+      font-size: .875rem;
+      transition: background .2s ease;
+    }
+    .code .copy-btn:hover { background: rgba(255,255,255,.22); }
+    .card-header {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .section-title i { opacity: .8; margin-right: .5rem; }
+    .footer {
+      color: #6c757d;
+      font-size: .9rem;
+    }
+  </style>
+</head>
+
+<body>
+    
+  <div class="container py-5">
+    <!-- SECCIÓN: Mostrar configuración completa de Git -->
+<section class="mt-5">
+  <h2 class="section-title h4 mb-3">
+    <i class="bi bi-terminal-dash"></i> Mostrar configuración completa con <code>git config -l</code>
+  </h2>
+
+  <div class="row align-items-center g-4">
+    <!-- Bloque de texto y comando -->
+    <div class="col-lg-7">
+      <div class="card shadow-sm h-100">
+        <div class="card-header bg-dark text-white d-flex align-items-center">
+          <i class="bi bi-git me-2"></i> Visualizar configuración global y local
+        </div>
+        <div class="card-body">
+          <p>El comando <code>git config -l</code> (o <code>--list</code>) muestra todas las configuraciones activas, combinando los niveles:</p>
+          <ul>
+            <li><strong>Global:</strong> almacenadas en <code>~/.gitconfig</code></li>
+            <li><strong>Local:</strong> del repositorio actual (<code>.git/config</code>)</li>
+            <li><strong>Sistema:</strong> configuraciones de instalación</li>
+          </ul>
+
+          <div class="code mt-3">
+            <button class="copy-btn" data-copy="git config -l">
+              <i class="bi bi-clipboard"></i> Copiar
+            </button>
+<pre><code>git config -l</code></pre>
+          </div>
+
+          <p class="mt-3 text-muted small">
+            <i class="bi bi-info-circle"></i> Si deseas solo las opciones globales: <code>git config --global -l</code>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Imagen de Git -->
+    <div class="col-lg-5 text-center">
+      <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg"
+           alt="Logo de Git"
+           class="img-fluid p-3"
+           style="max-height: 200px;">
+      <p class="text-muted mt-2">
+        <i class="bi bi-image"></i> Logotipo oficial de <strong>Git</strong> (fuente: git-scm.com)
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- HERO -->
+    <header class="hero mb-5 shadow-sm">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <div>
+          <h1 class="h2 mb-2"><i class="bi bi-git"></i> El fichero <code>.git/config</code> — Guía profesional</h1>
+          <p class="mb-0">Entiende y comunica la configuración de tu repositorio con ejemplos claros, alias útiles y prácticas seguras.</p>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-light text-dark"><i class="bi bi-gear"></i> Git & Config</span>
+          <span class="badge bg-light text-dark"><i class="bi bi-code-slash"></i> Buenas prácticas</span>
+          <span class="badge bg-light text-dark"><i class="bi bi-cloud-upload"></i> GitHub Pages</span>
+        </div>
+      </div>
+    </header>
+
+    <h2 class="section-title h4 mb-4"><i class="bi bi-diagram-3"></i> Secciones de configuración</h2>
+
+    <!-- Tarjetas -->
+    <div class="row g-4" id="config-cards">
+      <!-- USER -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-header bg-primary text-white">
+            <i class="bi bi-person-badge"></i> user.*
+          </div>
+          <div class="card-body">
+            <p class="fw-semibold">¿Qué hace?</p>
+            <ul class="mb-3">
+              <li><code>user.name</code>: Nombre que aparecerá como autor de los commits.</li>
+              <li><code>user.email</code>: Correo electrónico asociado al autor.</li>
+            </ul>
+            <div class="code">
+              <button class="copy-btn" data-copy="[user]
+    name = Pablo
+    email = jdommay863@g.educaand.es"><i class="bi bi-clipboard"></i> Copiar</button>
+<pre><code>[user]
+    name = Pablo
+    email = jdommay863@g.educaand.es</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SAFE.DIRECTORY -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-header bg-warning text-dark">
+            <i class="bi bi-shield-check"></i> safe.directory
+          </div>
+          <div class="card-body">
+            <p class="fw-semibold">¿Qué hace?</p>
+            <p>Marca el directorio como “seguro”, evitando la advertencia <em>detected dubious ownership in repository</em>.</p>
+            <div class="code">
+              <button class="copy-btn" data-copy="[safe]
+    directory = /home/kronos/Documentos/endes_git"><i class="bi bi-clipboard"></i> Copiar</button>
+<pre><code>[safe]
+    directory = /home/kronos/Documentos/endes_git</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALIAS.TREE -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-header bg-success text-white">
+            <i class="bi bi-signpost-split"></i> alias.tree
+          </div>
+          <div class="card-body">
+            <p class="fw-semibold">¿Qué hace?</p>
+            <p>Crea un atajo de comando. Con <code>git tree</code> obtienes el historial en formato gráfico.</p>
+            <div class="code">
+              <button class="copy-btn" data-copy="[alias]
+    tree = log --graph --decorate --all --oneline"><i class="bi bi-clipboard"></i> Copiar</button>
+<pre><code>[alias]
+    tree = log --graph --decorate --all --oneline</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CREDENTIAL.HELPER -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-header bg-danger text-white">
+            <i class="bi bi-key"></i> credential.helper
+          </div>
+          <div class="card-body">
+            <p class="fw-semibold">¿Qué hace?</p>
+            <p>Almacena temporalmente tus credenciales en memoria (15 min por defecto), evitando reintroducir usuario/token.</p>
+            <div class="code">
+              <button class="copy-btn" data-copy="[credential]
+    helper = cache"><i class="bi bi-clipboard"></i> Copiar</button>
+<pre><code>[credential]
+    helper = cache</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CORE -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-header bg-secondary text-white">
+            <i class="bi bi-cpu"></i> core.*
+          </div>
+          <div class="card-body">
+            <p class="fw-semibold">¿Qué hace?</p>
+            <ul class="mb-3">
+              <li><code>repositoryformatversion=0</code>: Versión del formato interno de Git.</li>
+              <li><code>filemode=true</code>: Git respeta los permisos (ejecutable, lectura…).</li>
+              <li><code>bare=false</code>: Repositorio no “bare” → tiene árbol de trabajo.</li>
+              <li><code>logallrefupdates=true</code>: Registra movimientos de referencias.</li>
+            </ul>
+            <div class="code">
+              <button class="copy-btn" data-copy="[core]
+    repositoryformatversion = 0
+    filemode = true
+    bare = false
+    logallrefupdates = true"><i class="bi bi-clipboard"></i> Copiar</button>
+<pre><code>[core]
+    repositoryformatversion = 0
+    filemode = true
+    bare = false
+    logallrefupdates = true</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REMOTE.ORIGIN -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-header bg-info text-white">
+            <i class="bi bi-cloud-arrow-up"></i> remote.origin.*
+          </div>
+          <div class="card-body">
+            <p class="fw-semibold">¿Qué hace?</p>
+            <ul class="mb-3">
+              <li><code>url</code>: Dirección SSH del repositorio en GitHub.</li>
+              <li><code>fetch</code>: Al hacer <code>git fetch</code>, trae todas las ramas como <code>origin/&lt;nombre&gt;</code>.</li>
+            </ul>
+            <div class="code">
+              <button class="copy-btn" data-copy='[remote "origin"]
+    url = git@github.com:profeInformatica101/miapp.git
+    fetch = +refs/heads/*:refs/remotes/origin/*'><i class="bi bi-clipboard"></i> Copiar</button>
+<pre><code>[remote "origin"]
+    url = git@github.com:profeInformatica101/miapp.git
+    fetch = +refs/heads/*:refs/remotes/origin/*</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BRANCHES -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-header bg-dark text-white">
+            <i class="bi bi-git"></i> branch.*
+          </div>
+          <div class="card-body">
+            <p class="fw-semibold">¿Qué hace?</p>
+            <p>Define cómo cada rama local se sincroniza con su contraparte remota.</p>
+            <div class="code">
+              <button class="copy-btn" data-copy='[branch "main"]
+    remote = origin
+    merge  = refs/heads/main
+
+[branch "curl_SwingMavenBase"]
+    remote = origin
+    merge  = refs/heads/curl_SwingMavenBase
+
+[branch "feature-date"]
+    remote = origin
+    merge  = refs/heads/feature-date'><i class="bi bi-clipboard"></i> Copiar</button>
+<pre><code>[branch "main"]
+    remote = origin
+    merge  = refs/heads/main
+
+[branch "curl_SwingMavenBase"]
+    remote = origin
+    merge  = refs/heads/curl_SwingMavenBase
+
+[branch "feature-date"]
+    remote = origin
+    merge  = refs/heads/feature-date
+... (y así sucesivamente)</code></pre>
+            </div>
+            <p class="mt-3 mb-0">Al hacer <code>git pull</code> en estas ramas, Git obtiene los cambios desde <code>&lt;remote&gt;/&lt;merge&gt;</code>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NUEVA SECCIÓN: Cómo mostrarlo en GitHub -->
+    <section class="mt-5">
+      <h2 class="section-title h4 mb-3"><i class="bi bi-cloudy"></i> Cómo mostrarlo en GitHub (Pages + README)</h2>
+
+      <div class="row g-4">
+        <!-- GitHub Pages -->
+        <div class="col-lg-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-light">
+              <i class="bi bi-globe2"></i> Publicar con GitHub Pages
+            </div>
+            <div class="card-body">
+              <ol class="mb-3">
+                <li>Crea la carpeta <code>docs/</code> en tu repo y guarda este archivo como <code>docs/index.html</code>.</li>
+                <li>Sube y haz commit/push.</li>
+                <li>En tu repo: <strong>Settings → Pages</strong>.</li>
+                <li>En “Branch”, elige <strong>main</strong> y carpeta <strong>/docs</strong>. Guarda.</li>
+                <li>Espera unos segundos: tu web quedará disponible en <em>https://&lt;usuario&gt;.github.io/&lt;repo&gt;/</em></li>
+              </ol>
+              <div class="code">
+                <button class="copy-btn" data-copy="mkdir -p docs
+mv tu-archivo.html docs/index.html
+git add docs/index.html
+git commit -m 'docs: publica guía .git/config en GitHub Pages'
+git push origin main"><i class="bi bi-clipboard"></i> Copiar</button>
+<pre><code>mkdir -p docs
+mv tu-archivo.html docs/index.html
+git add docs/index.html
+git commit -m 'docs: publica guía .git/config en GitHub Pages'
+git push origin main</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- README con badges -->
+        <div class="col-lg-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-light">
+              <i class="bi bi-award"></i> README profesional (badges + enlaces)
+            </div>
+            <div class="card-body">
+              <p class="mb-2">Añade badges y un enlace a la demo:</p>
+              <div class="code">
+                <button class="copy-btn" data-copy='<!-- README.md -->
+# Guía .git/config
+
+[![Made with ❤️ for Devs](https://img.shields.io/badge/Made%20with-%E2%9D%A4%EF%B8%8F%20for%20Devs-ff69b4)]()
+[![Git](https://img.shields.io/badge/Git-Config-informational)]()
+[![License](https://img.shields.io/badge/License-MIT-green)]()
+
+**Demo:** https://USUARIO.github.io/REPO/
+
+## Contenido
+- Secciones de .git/config explicadas
+- Alias útiles
+- Buenas prácticas y seguridad
+
+## Uso rápido
+Abre la versión online o descarga el HTML desde /docs.
+
+## Contribuir
+1. Fork
+2. Rama `feat/mejora`
+3. PR con descripción y captura
+'>
+                  <i class="bi bi-clipboard"></i> Copiar</button>
+<pre><code>&lt;!-- README.md --&gt;
+# Guía .git/config
+
+[![Made with ❤️ for Devs](https://img.shields.io/badge/Made%20with-%E2%9D%A4%EF%B8%8F%20for%20Devs-ff69b4)]()
+[![Git](https://img.shields.io/badge/Git-Config-informational)]()
+[![License](https://img.shields.io/badge/License-MIT-green)]()
+
+**Demo:** https://USUARIO.github.io/REPO/
+
+## Contenido
+- Secciones de .git/config explicadas
+- Alias útiles
+- Buenas prácticas y seguridad
+
+## Uso rápido
+Abre la versión online o descarga el HTML desde /docs.
+
+## Contribuir
+1. Fork
+2. Rama `feat/mejora`
+3. PR con descripción y captura
+</code></pre>
+              </div>
+              <p class="mb-0 small text-muted"><i class="bi bi-info-circle"></i> Ajusta <code>USUARIO</code> y <code>REPO</code> a tu repositorio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-5 pt-4 border-top footer">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <span><i class="bi bi-lightbulb"></i> Consejo: versiona la guía y los ejemplos con ramas y PRs para que el alumnado practique flujo profesional.</span>
+        <span><i class="bi bi-shield-lock"></i> Seguridad: evita subir <code>.git/config</code> reales con datos sensibles.</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Copiar al portapapeles -->
+  <script>
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const text = btn.getAttribute('data-copy');
+        try {
+          await navigator.clipboard.writeText(text);
+          const original = btn.innerHTML;
+          btn.innerHTML = '<i class="bi bi-check2-circle"></i> Copiado';
+          setTimeout(() => btn.innerHTML = original, 1200);
+        } catch (e) {
+          alert('No se pudo copiar automáticamente. Copia manualmente.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
